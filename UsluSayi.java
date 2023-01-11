@@ -18,7 +18,7 @@ public class UsluSayi {
     	Scanner input = new Scanner(System.in);
     	System.out.print("Taban değerini giriniz: ");
         double base =input.nextDouble();
-        System.out.println("Üs değerini giriniz: ");
+        System.out.print("Üs değerini giriniz: ");
         int exponent = input.nextInt();
         double result = exponentiate(base, exponent);
         System.out.println(base + "^" + exponent + " = " + result);
