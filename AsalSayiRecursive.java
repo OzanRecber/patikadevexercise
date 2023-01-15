@@ -3,29 +3,26 @@ package metotlar;
 import java.util.Scanner;
 
 public class AsalSayiRecursive {
-	public static boolean isPrime(int n) {
-	    if (n <= 1) {
-	        return false;
-	    }
-	    for (int i = 2; i < n; i++) {
-	        if (n % i == 0) {
-	            return false;
-	        }
-	    }
-	    return true;
+	static int checkPrime(int number, int number2) {
+		if(number2==1) {
+			return 0;
+		}
+		if(number % number2 == 0) {
+			return -1;
+		} else {
+			return checkPrime(number, number2-1);
+		}
 	}
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		System.out.print("Sayı değeri giriniz: ");
-		int n = input.nextInt();
-		boolean result = isPrime(n);
-		if(result==true) {
-			System.out.println(n+" sayısı asaldır");
-		}
+		System.out.print("Kontrol edilecek sayıyı giriniz: ");
+		int number = input.nextInt();
+		int result = checkPrime(number, number-1);
+		if(result==0)
+			System.out.println(number+" asal sayıdır");
 		else
-			System.out.println(n+" sayısı asal değildir");
-
+			System.out.println(number+" asal sayı değildir");
 	}
 
 }
