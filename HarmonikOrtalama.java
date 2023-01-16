@@ -8,18 +8,28 @@ public class HarmonikOrtalama {
 		// Harmonik seri = 1/1+1/2+1/3+1/4+...+1/n
 		// Harmonik ortalama = eleman sayısı / elemanların harmonik serisi
 		Scanner input = new Scanner(System.in);
+		System.out.print("Harmonik ortalaması hesaplanacak dizinin eleman sayısını giriniz: ");
+		int n = input.nextInt();
+		double[] dizi = new double[n];
+		
+		double harmonikSeri = 0;
+		for(int i = 0; i < dizi.length; i++) {
+			System.out.print("Dizinin " + (i+1) +". elemanını giriniz: ");
+			dizi[i] = input.nextDouble();
+			harmonikSeri += 1/dizi[i];
+		}
+		System.out.print("Oluşturulan dizi: [");
+		for(int i = 0; i < dizi.length; i++) {
+			System.out.print(dizi[i]);
+			if(i<n-1) {
+				System.out.print(", ");
+			}
+		}
+		System.out.print("]");
+		double harmonikOrtalama = dizi.length/harmonikSeri;
+		System.out.println("\nDizinin Harmonik ortalaması: "+harmonikOrtalama);
+		
+		
+	}
 
-        double[] harmonic = new double[5];
-        double total = 0;
-
-        for (int i = 0; i < harmonic.length; i++) {
-            System.out.print(i + ". indisli elemanı girin: ");
-            harmonic[i] = input.nextDouble();
-
-            total = total + (1 / harmonic[i]);
-        }
-        
-        System.out.println("Sayiların harmonik serisi: " + total);
-        System.out.println("Harmonik ortalama: " + (harmonic.length / total));
-    }
 }
